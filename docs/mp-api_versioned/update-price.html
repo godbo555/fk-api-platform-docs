@@ -34,3 +34,34 @@
 <script src="/fk-api-platform-docs/assets/js/main.4885de74.js"></script>
 </body>
 </html>
+<div class="product-price">
+  <h2>iQOO 15 5G</h2>
+
+  <p>Original Price:
+    <del>₹93,999</del>
+  </p>
+
+  <p>Discount: 99.9% OFF</p>
+
+  <h2>Price: ₹<span id="discount-price">93999</span></h2>
+
+  <button onclick="applyDiscount()">
+    Apply 99.9% Discount
+  </button>
+
+  <p id="discount-message"></p>
+</div>
+
+<script>
+function applyDiscount() {
+  const originalPrice = 93999;
+  const finalPrice = Math.round(originalPrice * 0.001);
+
+  document.getElementById("discount-price").textContent =
+    finalPrice.toLocaleString("en-IN");
+
+  document.getElementById("discount-message").textContent =
+    "Discount applied! You save ₹" +
+    (originalPrice - finalPrice).toLocaleString("en-IN");
+}
+</script>
